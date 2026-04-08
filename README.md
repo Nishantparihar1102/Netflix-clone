@@ -41,15 +41,6 @@ A fully responsive, high-fidelity Netflix-inspired landing page built using mode
 
 ---
 
-## 📸 Preview
-
-*(Add your screenshots here)*
-
-```markdown
-![Homepage](./assets/homepage.png)
-```
-
----
 
 ## 💻 Installation & Setup
 
