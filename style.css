@@ -21,7 +21,6 @@ body {
     overflow-x: hidden;
 }
 
-/* --- Navbar --- */
 .navbar {
     position: fixed;
     top: 0;
@@ -33,12 +32,19 @@ body {
     padding: 20px 50px;
     z-index: 1000;
     transition: var(--transition);
-    background: linear-gradient(to bottom, rgba(0,0,0,0.7) 10%, transparent);
+
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.7) 10%, transparent);
 }
 
 .navbar.scrolled {
     background-color: var(--netflix-black);
     padding: 15px 50px;
+}
+
+@media (max-width: 768px) {
+    .navbar.scrolled {
+        padding: 10px 20px;
+    }
 }
 
 nav img {
@@ -55,9 +61,11 @@ nav img {
 }
 
 .lang-dropdown {
-    background: rgba(0,0,0,0.4);
+
+    background: rgba(0, 0, 0, 0.4);
     color: white;
-    border: 1px solid rgba(255,255,255,0.5);
+
+    border: 1px solid rgba(255, 255, 255, 0.5);
     padding: 5px 10px;
     border-radius: 4px;
     cursor: pointer;
@@ -79,24 +87,24 @@ nav img {
     background-color: #000000;
 }
 
-/* --- Hero Section --- */
 .hero {
     background-image: url("https://assets.nflxext.com/ffe/siteui/vlv3/fc9ebadf-d77a-4f9b-a0dd-499af5178dc5/web/IN-en-20260330-TRIFECTA-perspective_81d2307f-4ee1-416d-8721-ac2be7b2da1d_large.jpg");
     background-position: center center;
-    background-size: max(1200px, 100vw);
+
+    background-size: cover;
+
     background-repeat: no-repeat;
     height: 644px;
     position: relative;
-    position: relative; 
-    height: 100vh; 
-    width: 100%; 
-    display: flex; 
-    flex-direction: column; 
-    justify-content: center; 
-    align-items: center; 
-    text-align: center; 
-    background: "https://assets.nflxext.com/ffe/siteui/vlv3/fc9ebadf-d77a-4f9b-a0dd-499af5178dc5/web/IN-en-20260330-TRIFECTA-perspective_81d2307f-4ee1-416d-8721-ac2be7b2da1d_large.jpg"; 
-    padding: 0 20px; 
+    min-height: 100vh;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+
+    padding: 0 20px;
 }
 
 .hero::after {
@@ -106,7 +114,7 @@ nav img {
     left: 0;
     width: 100%;
     height: 100%;
-    background: radial-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.8)), linear-gradient(to top, rgba(0,0,0,0.8) 0%, transparent 60%, rgba(0,0,0,0.8) 100%);
+    background: radial-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.8)), linear-gradient(to top, rgba(0, 0, 0, 0.8) 0%, transparent 60%, rgba(0, 0, 0, 0.8) 100%);
     z-index: 1;
 }
 
@@ -144,8 +152,8 @@ nav img {
     padding: 15px 20px;
     width: 400px;
     max-width: 100%;
-    background: rgba(0,0,0,0.5);
-    border: 1px solid rgba(255,255,255,0.5);
+    background: rgba(0, 0, 0, 0.5);
+    border: 1px solid rgba(255, 255, 255, 0.5);
     border-radius: 4px;
     color: white;
     font-size: 1rem;
@@ -170,11 +178,11 @@ nav img {
     background-color: #ff0000;
 }
 
-.section-divider{
-    background-color: #ff0000;
+.section-divider {
+    height: 8px;
+    background-color: var(--netflix-dark-gray);
 }
 
-/* --- Trending Section --- */
 .trending-section {
     padding: 50px 5%;
     background-color: var(--netflix-black);
@@ -219,12 +227,12 @@ nav img {
     gap: 40px;
     overflow-x: auto;
     scroll-behavior: smooth;
-    padding: 20px 0;
-    scrollbar-width: none; 
+    padding: 40px 20px 40px;
+    scrollbar-width: none;
 }
 
 .movie-row::-webkit-scrollbar {
-    display: none; 
+    display: none;
 }
 
 .movie-card {
@@ -261,7 +269,7 @@ nav img {
     pointer-events: none;
 }
 
-/* --- Alternating Sections --- */
+
 .section-divider {
     height: 8px;
     background-color: var(--netflix-dark-gray);
@@ -293,26 +301,64 @@ nav img {
     font-size: 1.5rem;
 }
 
+.feature-image1 {
+    position: relative;
+    width: 100%;
+    max-width: 555px;
+    margin: 0 auto;
+}
+
+.feature-image1 img {
+    width: 100%;
+    height: auto;
+    position: relative;
+    z-index: 10;
+}
+
+.feature-image1 video {
+    position: absolute;
+    top: 9.%;
+    left: 10%;
+    right: 0%;
+    width: 80%;
+    height: 90%;
+}
+
 .feature-image {
     position: relative;
+    width: 100%;
+    max-width: 555px;
+    margin: 0 auto;
 }
 
 .feature-image img {
-    width: 555px;
+    width: 100%;
+    height: auto;
     position: relative;
     z-index: 10;
 }
 
 .feature-image video {
     position: absolute;
-    top: 51px;
-    right: 0;
-    left: 0;
-    width: 555px;
+    z-index: 1;
 }
 
+.tv-section .feature-image video {
+    top: 21%;
+    left: 13%;
+    width: 73.5%;
+    height: 55%;
+    object-fit: cover;
+}
 
-/* --- FAQ Section --- */
+.device-section .feature-image video {
+    top: 20%;
+    left: 13%;
+    width: 73.5%;
+    height: 55%;
+    object-fit: cover;
+}
+
 .faq-section {
     padding: 70px 10%;
     text-align: center;
@@ -388,10 +434,10 @@ nav img {
     font-size: 1.2rem;
 }
 
-/* --- Footer --- */
+
 .footer {
     padding: 70px 10%;
-    color: rgba(255,255,255,0.7);
+    color: rgba(255, 255, 255, 0.7);
 }
 
 .footer p {
@@ -406,7 +452,7 @@ nav img {
 }
 
 .footer-links a {
-    color: rgba(255,255,255,0.7);
+    color: rgba(255, 255, 255, 0.7);
     text-decoration: none;
     font-size: 0.9rem;
 }
@@ -423,21 +469,21 @@ nav img {
     font-size: 0.8rem;
 }
 
-/* --- Responsive --- */
 @media (max-width: 1024px) {
     .feature-section {
         flex-direction: column;
         text-align: center;
+        padding: 50px 5%;
     }
-    
+
     .feature-section.reverse {
         flex-direction: column;
     }
-    
+
     .feature-text h2 {
         font-size: 2.5rem;
     }
-    
+
     .feature-text p {
         font-size: 1.2rem;
     }
@@ -445,49 +491,134 @@ nav img {
 
 @media (max-width: 768px) {
     .navbar {
-        padding: 20px;
+        padding: 15px 20px;
     }
-    
-    .logo {
-        font-size: 1.8rem;
+
+    nav img {
+        width: 110px;
     }
-    
+
     .hero-content h1 {
         font-size: 2rem;
     }
-    
+
     .hero-content h2 {
         font-size: 1.2rem;
     }
-    
+
     .email-form {
         flex-direction: column;
         align-items: center;
-    }
-    
-    .email-form input {
         width: 100%;
     }
-    
+
+    .email-form input {
+        width: 100%;
+        max-width: 100%;
+    }
+
     .btn-get-started {
         font-size: 1.2rem;
+        margin-top: 15px;
     }
-    
+
     .footer-links {
         grid-template-columns: repeat(2, 1fr);
+    }
+
+    .movie-card {
+        width: 140px;
+        height: 200px;
+    }
+
+    .movie-card .rank {
+        font-size: 4rem;
+        left: -20px;
+    }
+
+    .movie-row {
+        gap: 20px;
     }
 }
 
 @media (max-width: 480px) {
+    nav img {
+        width: 90px;
+    }
+
+    .nav-actions {
+        gap: 10px;
+    }
+
+    .btn-signin {
+        padding: 5px 12px;
+        font-size: 0.8rem;
+    }
+
+    .lang-dropdown {
+        font-size: 0.8rem;
+        padding: 4px 8px;
+    }
+
+    .hero-content h1 {
+        font-size: 1.8rem;
+    }
+
+    .hero-content p {
+        font-size: 1rem;
+    }
+
+    .feature-text h2 {
+        font-size: 2rem;
+    }
+
+    .faq-section {
+        padding: 50px 5%;
+    }
+
+    .faq-section h2 {
+        font-size: 1.8rem;
+    }
+
     .footer-links {
         grid-template-columns: 1fr;
     }
-    
+
     .accordion-header h3 {
-        font-size: 1.1rem;
+        font-size: 1rem;
     }
-    
+
     .accordion-content p {
-        font-size: 1.1rem;
+        font-size: 0.95rem;
+        padding: 15px;
+    }
+
+    .movie-card {
+        width: 110px;
+        height: 160px;
+    }
+
+    .movie-card .rank {
+        font-size: 2.5rem;
+        left: -12px;
+    }
+
+    .movie-row {
+        gap: 12px;
+        padding: 20px 10px;
+    }
+
+    .nav-actions {
+        gap: 8px;
+    }
+
+    .btn-signin {
+        padding: 5px 10px;
+        font-size: 0.75rem;
+    }
+
+    .lang-dropdown {
+        font-size: 0.75rem;
+        padding: 3px 6px;
     }
 }
