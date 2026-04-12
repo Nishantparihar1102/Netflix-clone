@@ -1,11 +1,7 @@
 # 🎬 Netflix Clone – Premium Streaming UI
 
 A fully responsive, high-fidelity Netflix-inspired landing page built using modern frontend technologies. This project focuses on replicating Netflix’s premium UI/UX with pixel-perfect design, smooth interactions, and responsive layouts.
-
 ---
-
-## 🚀 Live Demo  
-👉 https://project-nishantfix.netlify.app/
 
 ---
 
